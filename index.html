@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Viewer</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    #pdf-viewer {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="pdf-viewer" src=""></iframe>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var userLang = navigator.language || navigator.userLanguage;
+      var pdfSrc = 'Ilya Biryukov - Java Developer ENG.pdf';
+
+      if (userLang.startsWith('ru')) {
+        pdfSrc = 'Ilya Biryukov - Java Developer RUS.pdf';
+      }
+
+      document.getElementById('pdf-viewer').src = pdfSrc;
+    });
+  </script>
+</body>
+</html>
